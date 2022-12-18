@@ -1,4 +1,4 @@
-function [x_translatorno, y_translatorno, teta_izlaz] = simulacija_kretanja(x_pocetno)
+function [x_translatorno, y_translatorno, teta_izlaz, delta_s_levo_izlaz, delta_s_desno_izlaz] = simulacija_kretanja(x_pocetno)
 
     b = 200;
     delta_s_levo = 10 + randn(1, 10)
@@ -19,6 +19,8 @@ function [x_translatorno, y_translatorno, teta_izlaz] = simulacija_kretanja(x_po
     x_translatorno = x_novo(1, :);
     y_translatorno = x_novo(2, :);
     teta_izlaz = x_novo(3, :);
+    delta_s_levo_izlaz = delta_s_levo;
+    delta_s_desno_izlaz = delta_s_desno;
     plot(x_translatorno, y_translatorno)
     axis equal
 end
