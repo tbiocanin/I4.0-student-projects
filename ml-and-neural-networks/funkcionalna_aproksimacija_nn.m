@@ -1,20 +1,7 @@
-%deklaracija pocetnih vrednosti 
-x_pocetak = [0; 0; -pi/2];
-
-
-[x_translatorno, y_translatorno, teta_izlaz, delta_s_levo, delta_s_desno] = simulacija_kretanja(x_pocetak);
-
-%definicija ulaznih vektora
-i1 = x_translatorno';
-i2 = y_translatorno';
-i3 = teta_izlaz';
-%definicija izlaznih vektora
-o1 = delta_s_levo';
-o2 = delta_s_desno';
-
-%formatiranje vektora ulaza i izlaza
-i = [i1 i2 i3]';
-o = [o1 o2]';
+%definicija ulaznog vektora
+i = [];
+%definicija izlaznog vektora
+o = [];
 
 %treniranje i verifikacija rezultata
 % Define the structure of feedforward neural network
@@ -35,5 +22,6 @@ y = sim(net,i(:,:));
 
 % plot(x_translatorno, y_translatorno);
 hold on
- plot(x_translatorno, y(2, :), x_translatorno, y_translatorno);
-% title('Validacija rezultata')
+plot(x_translatorno, y(2, :), x_kruzno, y_kruzno);
+title('Validacija rezultata')
+legend('kruzno, simulirano', 'kruzno, nn nauceno')

@@ -1,10 +1,10 @@
 function [x_translatorno, y_translatorno, teta_izlaz, delta_s_levo_izlaz, delta_s_desno_izlaz] = simulacija_kretanja_kruzno(x_pocetno)
 
-    b = 200;
+    b = 400;
     R = 100;
     alfa = -2*pi/180;
-    delta_s_levo = ones(1, 100) .* (R - b/2)*alfa; %+ randn(1, 100)
-    delta_s_desno = ones(1, 100) .* (R + b/2)*alfa; %+ randn(1, 100)
+    delta_s_levo = ones(1, 100) .* (R - b/2)*alfa + randn(1, 100);
+    delta_s_desno = ones(1, 100) .* (R + b/2)*alfa + randn(1, 100);
 
     % delta_s_levo_novox
 
