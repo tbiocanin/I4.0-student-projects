@@ -1,19 +1,10 @@
 clc,clear, close all
 
 load ("ObucavanjeCifre.mat")
-% Initialise input vectors
-
-% Initialise output vectors
-
-
 i = Obucavanje_slike;
 o = Obucavanje_klase;
 % Define the structure of feedforward neural network
 net = newff(i,o,[40, 30, 30, 20],{'logsig','logsig','logsig','logsig','softmax'},'trainscg');
-
-%10 neurona u prvom skrivenom sloju, 8 u drugom
-%logsig - sigmuidna aktivaciona funkcija
-%lm - Levenberg Markeov algoritam ucenja (trainlm)
 
 % Training parameters
 net.trainParam.show = 100; %prikkazuje svaku stotu iteraciju
