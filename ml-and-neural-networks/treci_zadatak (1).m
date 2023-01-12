@@ -16,7 +16,7 @@ net = newff(i,o,[20, 20],{'logsig', 'tansig'},'trainlm');
 % Training parameters
 net.trainParam.show = 100;
 %net.trainParam.lr = 0.5; % ne važi za 'trainlm'
-net.trainParam.mu = 0.1; % parametar u�?enja
+net.trainParam.mu = 0.01; % parametar učenja
 net.trainParam.epochs = 1000;
 net.trainParam.goal = 1e-5;
 net.divideParam.trainRatio = 0.7;
@@ -27,6 +27,4 @@ net.divideParam.testRatio = 0.15;
 net = train(net,i,o);
 
 % View training results
-y = sim(net,i(:,:));
-
-plot(y(1, :))
+y = sim(net,i(:,:)); 

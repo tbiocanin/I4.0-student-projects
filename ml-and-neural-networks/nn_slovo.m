@@ -42,4 +42,4 @@ plot(y(1, :))
 plot(o2);
 plot(y(2, :));
 title('Validacija rezultata')
-legend('kruzno, simulirano', 'kruzno, nn nauceno')
+legend('Kruzno, simulirano', 'Kruzno, nn nauceno')

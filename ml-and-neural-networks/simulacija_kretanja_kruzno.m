@@ -27,5 +27,4 @@ function [x_translatorno, y_translatorno, teta_izlaz, delta_s_levo_izlaz, delta_
     delta_s_levo_izlaz = delta_s_levo;
     delta_s_desno_izlaz = delta_s_desno;
     plot(x_translatorno, y_translatorno)
-    axis equal
 end

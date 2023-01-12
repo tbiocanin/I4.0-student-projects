@@ -1,5 +1,5 @@
 %deklaracija pocetnih vrednosti 
-x_pocetak = [0; 0; -pi/2];
+x_pocetak = [0; 0; -90];
 
 
 [x_translatorno, y_translatorno, teta_izlaz, delta_s_levo, delta_s_desno] = simulacija_kretanja(x_pocetak);
@@ -18,7 +18,7 @@ o = [o1 o2]';
 
 %treniranje i verifikacija rezultata
 % Define the structure of feedforward neural network
-net = newff(i,o,[30, 15],{'purelin','logsig'},'trainb');
+net = newff(i,o,[30, 15],{'purelin','logsig'},'trainoss');
 % Training parameters
 net.trainParam.show = 100;
 % net.trainParam.lr = 0.5; % ne važi za 'trainlm'
@@ -33,7 +33,11 @@ net = train(net,i,o);
 % View training results 
 y = sim(net,i(:,:));
 
-% plot(x_translatorno, y_translatorno);
-hold on
- plot(x_translatorno, y(2, :), x_translatorno, y_translatorno);
-% title('Validacija rezultata')
+%plot(x_translatorno, y_translatorno);
+%plot(y(1, :), y(2, :));
+%hold on
+%plot(o1', o2', 'r')
+%title('Validacija rezultata')
+%xlabel('Kretanje po x osi')
+%ylabel('Kretanje po y osi')
+%legend('Simulirana trajektorija', 'Naucena trajektorija')

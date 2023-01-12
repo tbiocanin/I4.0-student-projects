@@ -9,7 +9,7 @@ x_pocetak = [0; 0; 0];
 x_test = 0:1000;
 y = 2*cos(x_test) + cos(x_test/2 + pi/2) + 10;
 %plot(x_test, y)
-plot(x_izlaz, y_izlaz)
+%plot(x_izlaz, y_izlaz)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %definicija ulaznih vektora
 i1 = x_izlaz';
@@ -42,7 +42,7 @@ y = sim(net,i(:,:));
 
 % plot(x_translatorno, y_translatorno);
 hold on
-plot(x_izlaz, y(1, :), x_izlaz, y_izlaz);
-title('Validacija rezultata')
-legend('kruzno, simulirano', 'kruzno, nn nauceno')
+plot(y(2, :));
+%title('Validacija rezultata')
+%legend('kruzno, simulirano', 'kruzno, nn nauceno')
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
