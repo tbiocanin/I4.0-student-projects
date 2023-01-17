@@ -1,6 +1,4 @@
 data <- ISLR::Default
-#TODO: odraditi testiranja i analizu datih podataka
-#TODO: multiple classification model
 summary(data)
 nrow(data)
 
@@ -12,7 +10,7 @@ train <- data[sample, ]
 test <- data[!sample, ]
 
 #pravljenje modela sada sa poznatim podacima
-model <- glm(default~student+balance+income, family = "binomial", data = train)
+model <- glm(default~student+balance+income, family = "binomial"(link = "logit"), data = train)
 
 summary(model)
 
@@ -28,4 +26,13 @@ predict(model, new, type = "response")
 #predvidjanje za svaku promenljivu u test setu podataka
 predicted <- predict(model, test, type = "response")
 plot(predicted)
+#sortiranje tako da krajnji izlazi budu zaista binarne vrednosti
+for(i in 1:length(predicted)){
+  if(predicted[i] > 0.7) {
+    predicted[i] = 1
+  } else {
+    predicted[i] = 0
+  }
+}
 plot(model)
+
