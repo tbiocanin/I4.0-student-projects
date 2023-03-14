@@ -1,0 +1,94 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+
+
+// class Student {
+// public:
+
+//     std::string ime;
+//     std::string prezime;
+//     std::string br_indexa;
+    
+//     Student(std::string a, std::string b, std::string c){
+
+//         this->ime = a;
+//         this->prezime = b;
+//         this->br_indexa = c;
+
+
+//     }
+
+//     void predstavi_se()
+//     {
+
+//         std::cout << "Ja se zovem " << ime << " " << prezime << std::endl;
+//      }
+
+
+// };
+
+//DFS - depth first search
+
+class Graph
+{
+
+public:
+    Graph(int V)
+    {
+        this->V = V;
+        this->lista_povezanosti.resize(V);
+        this->poseceni.resize(V, false);
+
+    }
+
+    int V; //nije bitno gde se navode promenljive, zato se u konstruktoru ne buni za V
+    std::vector<std::vector<int>> lista_povezanosti;
+    //vektor pposecenosti cvorova
+    std::vector <bool> poseceni;
+    
+
+    void dodaj_granu(int u, int v)
+    {
+
+        lista_povezanosti[u].push_back(v);
+        lista_povezanosti[v].push_back(u);
+
+    }
+
+    void DFS(int u){
+
+        poseceni[u] = true;
+
+        std::cout << u << " ";
+
+        for(int v: lista_povezanosti[u]){
+            if(poseceni[v] == false){
+                DFS(v);
+            }
+        }
+    }
+};
+
+int main()
+{
+
+    // Student s("Dejan", "Milosevic", "351/2019");
+    // s.predstavi_se();
+
+    Graph g(7);
+    g.dodaj_granu(0,1);
+    g.dodaj_granu(0,2);
+    g.dodaj_granu(1,2);
+    g.dodaj_granu(1,3);
+    g.dodaj_granu(2,3);
+    g.dodaj_granu(2,4);
+    g.dodaj_granu(2,6);
+    g.dodaj_granu(3,4);
+    g.dodaj_granu(4,5);
+
+    g.DFS(1);
+
+    return 0;
+}
