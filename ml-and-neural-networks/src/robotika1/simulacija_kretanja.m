@@ -13,7 +13,7 @@ function [x_translatorno, y_translatorno, teta_izlaz, delta_s_levo_izlaz, delta_
         x_novo(:, i) = x_novo(:, i-1) + [delta_s(1, i) * cos( x_novo(3, i-1) + ( delta_s_desno(1, i) - delta_s_levo(1, i) )/( 2 * b ) );
                               delta_s(1, i) * sin( x_novo(3, i-1) + (delta_s_desno(1, i) - delta_s_levo(1, i))/( 2 * b ) );
                               (delta_s_desno(1, i) - delta_s_levo(1, i))/b];
-        plot(x_novo(1, :), x_novo(2, :))
+        %plot(x_novo(1, :), x_novo(2, :))
     end
 
     x_translatorno = x_novo(1, :);
