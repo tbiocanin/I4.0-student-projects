@@ -1,0 +1,51 @@
+pre toga je bilo vezano za sortiranje generalno, vremenska kompleksnost; linearna pretraga i sort() funkcije
+
+//binarna pretraga// 170223
+
+O(logn) - ako je vec niz sortiran, i pretraga je mnogo laksa sa ovom kompleksnoscu nego sa linearnom 
+
+
+**zadaci prodjeni**
+*bar kodovi - linearna i binarna pretraga/
+pretraga jednog elementa ide O(logn), dakle u m koraka O(m logn) dok se interval ne isprazni
+
+*broj parova zbira
+opet, slozenost binarne pretrage je O(logn), ali trazimo za svaki od n elemenata niza pa ide O(nlogn)
+
+*i-ti na i-tom mestu (provera da li u rastucem nizu ima broj gde se indeks poklapa sa vrednoscu tog niza sa tim indeksom)
+vrlo lagano linearnom pretragom moze, samo sa uslovom za taj broj/indeks 
+binarna pretraga -> lowerbound i pretrazujemo tako sto proveravamo razliku broja i indeksa niza -> lower_bound fja pronalazenje elementa koji je vec ili jednak datom
+
+- binarna pretraga prelomne tacke -
+odredjivanje svojstva elemenata niza; neko svojstvo koje zaddovoljavaju, gde prestaje da vazi, a gde pocinje itd. (poenta)
+*provera bar kodova
+
+*prvi broj koji je deljiv
+linearna pretraga - protutnjaj ceo niz za svaki delilac i samo prebroji i stekuj u posebnom nizu O(m*n), m delilaca i n brojeva
+binarna pretraga - ako je broj levo i desno deljiv, idi levo; ako onda broj nije deljiv levo i desno, idi desno i tako redom dok ne dodjes do broja niza koji je deljiv sa desnoe a niej deljiv sa leve 
+u suprotnom, izbaciti da nema broja sa kojim je deljiv, tj nema prelomne tacke O(logn). Samo se vrati na 28 str da ne zaboravis caku oko d=s, tj ispravku te greske koja se potkrala u inicijalnomj impl
+*minimum rotiranog sortiranog niza
+linearna pretraga i min_element() u slozenosti od O(n) -> trazi se, ipak, eksplicitno O(logn)
+binarna pretraga -
+    - ako se vodis pocetnim elementom, imas uslov za proveru gde gledas da li je taj clan strogo manji od prvog elementa niza. Izlaz ce biti ili leva granica izlaza binarne pretrage ili pocetni element 
+    - ako se vodis sa krajnjim elementom, gledas da je strogo manji od poslednjeg clana niza i opet vracas levu granicu iz petlje 
+
+//tehnika dva pokazivaca//
+jedna petlja, uglavnom, koja hendluje 2 promenljive u (sortiranom) nizu -> slozenos O(n)
+*objedinjavanje
+moze da se prekopiraju oba niza u jedan i da se iskoristi sort fja pa mu dodje na O((m+n)log(m+n))
+sa dva pokazivaca se svede na O(m+n) -> idu dva iteratora u oba niza, jedna for petlja i zavisno od uslova koji je broj veci(jednak) od drugog, redom ubacuje u novi niz sortirane vrednosti (pokusaj sam iz gasa da impl ako stignes)
+*blizance si imao na vezbama, preskacem 
+*broj parova zbira
+gruba sila - O(n^2)
+dva pokazivaca -> sortira se niz neopadajuce i onda imas pokazivac na pocetku/kraju i onda se samo uporedjuju sa trazenim zbirom dok se ne susretnu pokazivaci 
+ako je zbir veci, pomeri desni pokazivac ulevo, ako je manji pomeri levi itd. do susretanja i povecaj brojac za svaki detektovan trazen zbir 
+(pokusaj sam da impl)
+*trojke datog zbira(3sum)
+gruba sila -> O(n^3)
+dva pokazivaca -> sortiranje ide na O(logn) a ukupna slozenost na O(n^2) -> imam kao treci pokazivac, jer analiziram za svaki clan. Za neko i, onda imam dva pokazivaca na pocetku i na kraju pa samim tim trazim 
+moguce kombinacije za to ukoliko one postoje
+*razlika visina
+gruba sila -> n^2, sortiranje n nad 2 pa je isto n^2, 
+sa dva pokazivaca samo gledas uslov da li je razlika manja ili veca od trazene. Ukoliko je manja, pomeraj desni za jedan, ukoliko je veca pomeri levi za jedan (oba udesno)
+(poslednja tri preskacem, proci sutra ako stignes)

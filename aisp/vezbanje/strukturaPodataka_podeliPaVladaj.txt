@@ -1,0 +1,82 @@
+//strukture podataka//
+
+bibliotecke strukture podataka (kontejneri) se mogu grupisati u 
+    - sekvencijalni kontejneri -> array, string, vector, list, forward_list, deque
+    - adaptori -> stack, queue, priority_queue
+    - asocijativni kontejneri -> set, multiset, map, multimap
+    - neuredjeni asocijativni kontejneri -> unordered_set, unordered_multiset, unordered_map, unordered_multimap
+
+*sekvencijalni kontejneri
+    - serija elemenata, sekvencijalno se skladisti
+    - mogu se pozivati elementi na osnovu indeksa, ali ne svi. Array je tu izuzetak, jer predstavlja staticki niz, dok su ostali dinamicki pa dozvoljavaju umetanje i brisanje elemenata
+*adaptori 
+    - sloj iznad sekvencijalni kontejnera 
+    - stack -> LIFO stek ; elementi se mogu dodavati i uklanjati sa jednog kraja 
+    - queue -> FIFO, red; dodaje se sa jedne strane, uzima sa druge 
+    - priority_queue -> red sa prioritetom gde se dodaju elementi proizvoljno, a vade u nerasutcem redosledu
+*asocijativni kontejneri
+    - umetanje, pretraga i brisanje na osnovu vrednosti, tako da se pristupa na onovu kljuca 
+    - skupovi i mape 
+    - asocijativni se mogu podeliti na:
+        - uredjene
+            * set<T> - skup elemenata tipa T 
+            * multiset<T> multiskup, ima visestruko pojavljivanje elem 
+            * map<Kljuc, vrednost> 
+            * multimap<kljuc, vrednost> dozvoljeno preslikavanje originala u vise slika 
+            ** ugl logaritamnska slozenost zato sto se impl preko samobalansirajucih binarnih stabala
+        - neuredjeni 
+            * unordered_set<T> 
+            * unordered_multiset<T> 
+            * unordered_map<k, v> 
+            * unordered_multimap<k, v>
+            ** amortizovana konstantna slozenost, impl preko hash mapa
+*Skupovi i mape (recnici)
+-skupovi
+    - insert/erase -> za set ide slozenost O(logk) a unordered_set ide na O(k), dok je prosecna slozenost O(1)
+    - find -> vrati vrednost koju trazimo ili s.end() iterator ako nema. O(logk) je za set, a unordered_set ide na O(k) dok je prosek O(1)
+    - size
+    - uredjeni skupovi imaju i 
+        - lower_bound -> vrati najmanju vrednost strogo manje od arg fje 
+        - upper_bount -> vrati najmanju vrednost strogo vece od arg fje 
+    *multiskup -> ista prica kao za set, samo podrzavaju i duplikate 
+
+-mape
+    - kljuc vrednost 
+    - find 
+*duplikati
+*sortiranje brojeva 
+*broj razl duzina duzi 
+*Stek 
+    - LIFO -> poslednji koji je usao, prvi ce da izadje 
+    - fje koje su podrzane 
+        - push, pop, top, empty, size 
+    * linijski editor -> forward_list (jednostruko povezane liste) i samo list<T> <-> spomenuto kao jedan nacin kako moze da se implementira resenje ovog zadatka 
+        - begin()
+        - end()
+        - insert(it, x)
+        - erase(it)
+        -> dva steka, jedan za levo od kursora drugi za desno od kursora i zavisno od operacija svodi se na to da se samo dobacujemo sa vrednostima levog i desnog steka
+    *sortiranje brojeva 
+*Red 
+    - FIFO, prvi koji je usao prvi izlazi iz ovog adaptora
+    - push, pop, front, empty i size (ista pricao kao za stek)
+    - red sa dva kaja (sekvencijalni kontejner) -> deque
+        - push_back - guraj na pocetak 
+        - push_fron - guraj na kraj 
+        - front - ocitaj mi vrh 
+        - back - ocitaj mi kraj 
+        - pop_front 
+        - pop_back 
+        - empty
+        - size
+*Red sa prioritetom - priority_queue 
+    - dodaju se redom elementi, ali im se pridruzuje prioritet. Pri uklanjanju, uklanjaju se oni sa najvecim prioritetom 
+    - push, pop, empty, size, top 
+*apstraktne strukture su samo deo posvecen tome kako mozes nekim interfejsima da pravis bitne funkcionalnosti 
+//PODELI PA VLADAJ//
+    - u odnosu na induktivni pristup, ovde se visestruko smanjuje problem na manje frakcije koje se resavaju i onda stekuju nazad u resenje 
+    *quicksort -> dovedi pivota na pravo mesto i imas onda levo i desno od njega da sortiras. Dalje rekurzivno pozivas funkciju koja sredjuje levo i desno od njega
+    prosecno ide na O(nlogn), dok je najgori slucaj O(n^2)
+    *k najboljih -> quickselect kao modifikacija quicksSort-a gde se trazi k najvecih
+    *sortiranje brojeva -> merge sort (klasika primer)
+    *broj inverzija -> 

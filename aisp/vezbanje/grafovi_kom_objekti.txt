@@ -1,0 +1,47 @@
+//grafovi//
+
+usmeren i neusmeren graf
+kod usmerenih ima stepen ulaznog i izlaznosti cvora V (koliko puta se udje/izadje iz njega)
+put je prost ako se svaki cvor u njemu pojavi samo jednom 
+ciklus - prvi i poslednji cvor se preklapaju
+ciklus je prost ako se sem prvog i poslednjeg cvora ni jedan drugi  cvor ne pojavi dva puta 
+
+-reprezentacija grafova
+    -matrica povezanosti 
+    -ako je graf neusmeren, matrica povezanosti je simetricna 
+    -lak pristup clanovima, ali nedostatak je sto uzima velicinu n^2
+    -za uklanjanje i ispitivanje da li su dva cvora povezana -> O(1)
+    
+    -lista povezanosti -> O(n)
+        - moze se predstaviti povezanom listom nacin na koji su grafovi povezanosti
+        - svakom cvoru se pridruzi ppovezana lista koja sadrzi sve grade susedne tom cvoru
+        - ispitivanje i uklanjanje -> O(n)
+        - moze se impl preko hes tabela pa se vreme izvrsavanja operacija svede na O(1)
+        - listanje grana ide na O(1 + d(v)) -> d(v) je stepen cvora v 
+
+maksimalni broj grana za 
+    - neusmereni graf n(n-1)/2
+    - usmereni graf n(n-1)
+
+pretraga u dubinu i sirinu 
+    -stek -> dubina, red -> sirina 
+    -pretraga u dubinu 
+        -neusmereni grafovi
+            -u dubinu idem rekurzivno i izlazim ako su svi susedi oznaceni kao da su poseceni 
+
+        -neurmereni grafovi 
+    -pretraga u sirinu 
+        -nivo po nivo 
+        - polazeci od korena ide samo nanize 
+        - kompleksnost obilaska O(v+e)
+//kombinatorni objekti//
+    -torke, leksikografski predstavljene 
+    *sledeci podskup 
+        - dva pristupa, sirenjem tako da se na trenutnog clana doda sledeci dok se ne dodje do posslednjeg 
+        - oduzimanjem, ista logika, dok se ne dodje do najmanjeg
+    *svi podskupovi ali leksikografski
+        - 
+
+//backtrack and brute force//
+gruba sila - iscrpno praviti sve kombinatorne objekte dok se ne zadovolji uslov 
+pretraga sa povratkom - optimizacija tog problema pretrage gde se presecaju kombinacije koje unapred nece voditi do resenja

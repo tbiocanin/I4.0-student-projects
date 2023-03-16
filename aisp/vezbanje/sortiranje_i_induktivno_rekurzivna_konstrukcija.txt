@@ -1,0 +1,58 @@
+//algoritmi sortiranja//
+
+1) BubbleSort
+    - poredjenje susednih elemenata i stavljanje na adekvatan polozaj. 
+    - najgori slucaj je da ce se proci kroz n elemenata i izvrsiti n operacija pa ce biti O(n^2)
+    - optimizacija -> da se upamti gde se odradio swap i da se od tog dela na dalje radi samo sortiranje niza 
+2) SelectionSort
+    - najmanji element na se dovodi na prvo mesto, pa svaki sledeci element se dovodi na naredne pozicije 
+    - u najgorem slucaju broj poredjenja i razmene dovodi do o(n^2)
+    - pozeljnije je raditi sa relativno kracim nizovima
+3) InsertionSort
+    - objasnjenje? - uporedjujem element sa onim ispred njega i dovodim ga do odgovarajuce pozicije dok ne bude element ispred njega veci od njega
+    - u najgorem slucaju broj poredjenja i razmene dovodi do o(n^2)
+    - 
+4) shellSort 
+    - implicitno se pravi matrica 2 x n/2 pa 4 x n/4 itd i na tako manjim frakcijama (vertikalama) se radi insertion sort dok se ne napravi odgovarajuci niz 
+5) MergeSort
+    - deli niz na dva dela sa razlikom clanova do jedan, rekurzivno sortira svaki od njih i vraca sortirane polovine.
+    - za spajanje treba jos jedan pomocni niz koji se koristi za objedinjavanje pomocu 2 pokazivaca
+    - najgori slucaj ide na O(nlogn)
+6) QuickSort
+    - dovodjenje pivota na svoje mesto i svodjenje problema na sortiranje dva manja niza (veci i manji deo od pivota)
+    - problem koji se secam sa casa, da je recimo pivot na pocetku ili na kraju pa to bude krvavo O(n^2)
+    - prosecno ide na O(nlogn)
+    - particionisanje ide sa tehnikom dva pokazivaca i nakon toga se rekurzivno sredjuju oba dela niza
+
+dalje je prikazano nerekurzivna impl quicksort-a i sortiranje sa multiskupom i prioritetnim redom. to se opet ponavlja na strukturama podataka
+
+//konstrukcija algoritama rekurzijom//
+
+- osnovna ideja: problem reda n svedemo na resavanje podproblema reda velicine n-1 itd. 
+- dva osnovna pristupa:
+    1) rekurzivno -> napraviti rekurzivnu fju koja prvo proverava da li je problem dovoljno male velicine 
+    2) iterativno -> krenuti od najjednostavnijeg problema i polako iterativno graditi do glavnog resenja
+
+*grejev kod 
+krvavo, ali znam otp intuiciju...
+*zvezda
+od svega ovoga stekovska impl deluje najjednostavnije, ali ima jos lakse - dva pokazivaca
+*apsolutni pobednik na glasanju
+dva pristupa:
+    - unordered_map (hesiranje) koja ide konstantnom slozenoscu, a u najgorem O(n)
+    - map (binarna balansirana stabla) -> O(logn) ; ovde vec vidis opseg kompleksnosti resavanja problema
+sa unordered map je relativno jednostavno, pobroj glasove i uz uslov proveri da li ima pobednika
+- sortiranje -> sortiraj niz i pobroj one koji se ponavljaju, imas isti uslov i odredis da li je tacno ili ne O(nlogn)
+*ciklicno pomeranje k mesta ulevo
+*abacaba -> dva slucajeva, ako je stepen broja dva onda znamo da se slovo pojavilo prvi put 
+         -> ako nije stepen broja dva, onda oduzimamo redom dok ne dodjemo do stepena broja dva i onda odredimo koji je broj u pitanju *rekurznivno
+*morzeov niz 
+O(n) idi i formiraj ceo niz pa mi nadji konkretan broj koji se trazi 
+rekurentni pristup, nalik abacabip, svodi se na to da se rekurzivno svodi na prvi ili drugi clan tako sto se oduzima indeks clana sa stepenom broja dva 
++ rekurentni pristup ima pomocnu funkciju koja vraca maksimalni stepen broja dva 
+*izbacivanje na sve nacine
+?
+*ne sadrzi cifru tri 
+trzi samo po ostatku kao uslov da je tri i deli sa 10, i prolazi redom sve brojeve u intervalu [0, n]
+cepanje skupa brojeva u podintervale na hiljadite, stote i desete delove i izvodjenje formule za resavanje 
+---- poslednjih deset strana -- kraj ----
