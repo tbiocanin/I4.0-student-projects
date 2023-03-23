@@ -403,6 +403,9 @@ actuation_SOURCE_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
 
+//The directory containing a CMake configuration file for cpp_common.
+cpp_common_DIR:PATH=/opt/ros/noetic/share/cpp_common/cmake
+
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/gtest/googlemock
 
@@ -455,11 +458,17 @@ kalman_filter_BINARY_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-
 //Value Computed by CMake
 kalman_filter_SOURCE_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/robotika2/kalman_filter
 
+//Path to a library.
+lib:FILEPATH=/opt/ros/noetic/lib/librostime.so
+
 //Value Computed by CMake
 map_generator_BINARY_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/map_generator
 
 //Value Computed by CMake
 map_generator_SOURCE_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/robotika2/map_generator
+
+//The directory containing a CMake configuration file for message_runtime.
+message_runtime_DIR:PATH=/opt/ros/noetic/share/message_runtime/cmake
 
 //Value Computed by CMake
 motion_model_BINARY_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/motion_model
@@ -467,14 +476,38 @@ motion_model_BINARY_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-a
 //Value Computed by CMake
 motion_model_SOURCE_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/robotika2/motion_model
 
+//Value Computed by CMake
+path_finding_pkg_BINARY_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/path_finding_pkg
+
+//Value Computed by CMake
+path_finding_pkg_SOURCE_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/robotika2/path_finding_pkg
+
+//The directory containing a CMake configuration file for roscpp_serialization.
+roscpp_serialization_DIR:PATH=/opt/ros/noetic/share/roscpp_serialization/cmake
+
+//The directory containing a CMake configuration file for roscpp_traits.
+roscpp_traits_DIR:PATH=/opt/ros/noetic/share/roscpp_traits/cmake
+
 //The directory containing a CMake configuration file for rospy.
 rospy_DIR:PATH=/opt/ros/noetic/share/rospy/cmake
+
+//The directory containing a CMake configuration file for rostime.
+rostime_DIR:PATH=/opt/ros/noetic/share/rostime/cmake
 
 //Value Computed by CMake
 sensor_fusion_BINARY_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/sensor_fusion
 
 //Value Computed by CMake
 sensor_fusion_SOURCE_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/robotika2/sensor_fusion
+
+//The directory containing a CMake configuration file for std_msgs.
+std_msgs_DIR:PATH=/opt/ros/noetic/share/std_msgs/cmake
+
+//Value Computed by CMake
+utils_BINARY_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/utils
+
+//Value Computed by CMake
+utils_SOURCE_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/robotika2/utils
 
 
 ########################
@@ -624,7 +657,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=9
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

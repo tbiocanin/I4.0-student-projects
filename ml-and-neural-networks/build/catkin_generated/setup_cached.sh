@@ -9,6 +9,7 @@
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/devel:$CMAKE_PREFIX_PATH"
 export LD_LIBRARY_PATH="/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build'
 export ROSLISP_PACKAGE_DIRECTORIES='/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/devel/share/common-lisp'
 export ROS_PACKAGE_PATH="/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src:$ROS_PACKAGE_PATH"

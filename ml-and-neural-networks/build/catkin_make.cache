@@ -1,2 +1,2 @@
-robotika2/actuation:robotika2/kalman_filter:robotika2/map_generator:robotika2/motion_model:robotika2/sensor_fusion
+robotika2/actuation:robotika2/kalman_filter:robotika2/map_generator:robotika2/motion_model:robotika2/path_finding_pkg:robotika2/sensor_fusion:robotika2/utils
 -DCATKIN_DEVEL_PREFIX=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/devel -DCMAKE_INSTALL_PREFIX=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/install -G Unix Makefiles

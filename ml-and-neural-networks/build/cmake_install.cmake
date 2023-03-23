@@ -131,10 +131,12 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/gtest/cmake_install.cmake")
+  include("/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/utils/cmake_install.cmake")
   include("/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/actuation/cmake_install.cmake")
   include("/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/kalman_filter/cmake_install.cmake")
   include("/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/map_generator/cmake_install.cmake")
   include("/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/motion_model/cmake_install.cmake")
+  include("/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/path_finding_pkg/cmake_install.cmake")
   include("/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/sensor_fusion/cmake_install.cmake")
 
 endif()

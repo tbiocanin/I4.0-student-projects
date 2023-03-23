@@ -1,0 +1,8 @@
+prefix=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/devel
+
+Name: utils
+Description: Description of utils
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

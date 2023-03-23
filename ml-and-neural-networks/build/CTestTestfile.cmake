@@ -5,8 +5,10 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
+subdirs("robotika2/utils")
 subdirs("robotika2/actuation")
 subdirs("robotika2/kalman_filter")
 subdirs("robotika2/map_generator")
 subdirs("robotika2/motion_model")
+subdirs("robotika2/path_finding_pkg")
 subdirs("robotika2/sensor_fusion")

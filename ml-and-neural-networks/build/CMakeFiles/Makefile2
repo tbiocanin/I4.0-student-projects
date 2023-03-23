@@ -54,20 +54,24 @@ CMAKE_BINARY_DIR = /home/teodor/Documents/I4.0-student-projects/ml-and-neural-ne
 
 # The main recursive "all" target.
 all: gtest/all
+all: robotika2/utils/all
 all: robotika2/actuation/all
 all: robotika2/kalman_filter/all
 all: robotika2/map_generator/all
 all: robotika2/motion_model/all
+all: robotika2/path_finding_pkg/all
 all: robotika2/sensor_fusion/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: gtest/preinstall
+preinstall: robotika2/utils/preinstall
 preinstall: robotika2/actuation/preinstall
 preinstall: robotika2/kalman_filter/preinstall
 preinstall: robotika2/map_generator/preinstall
 preinstall: robotika2/motion_model/preinstall
+preinstall: robotika2/path_finding_pkg/preinstall
 preinstall: robotika2/sensor_fusion/preinstall
 
 .PHONY : preinstall
@@ -79,10 +83,12 @@ clean: CMakeFiles/clean_test_results.dir/clean
 clean: CMakeFiles/tests.dir/clean
 clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
+clean: robotika2/utils/clean
 clean: robotika2/actuation/clean
 clean: robotika2/kalman_filter/clean
 clean: robotika2/map_generator/clean
 clean: robotika2/motion_model/clean
+clean: robotika2/path_finding_pkg/clean
 clean: robotika2/sensor_fusion/clean
 
 .PHONY : clean
@@ -217,6 +223,24 @@ robotika2/motion_model/clean:
 .PHONY : robotika2/motion_model/clean
 
 #=============================================================================
+# Directory level rules for directory robotika2/path_finding_pkg
+
+# Recursive "all" directory target.
+robotika2/path_finding_pkg/all:
+
+.PHONY : robotika2/path_finding_pkg/all
+
+# Recursive "preinstall" directory target.
+robotika2/path_finding_pkg/preinstall:
+
+.PHONY : robotika2/path_finding_pkg/preinstall
+
+# Recursive "clean" directory target.
+robotika2/path_finding_pkg/clean:
+
+.PHONY : robotika2/path_finding_pkg/clean
+
+#=============================================================================
 # Directory level rules for directory robotika2/sensor_fusion
 
 # Recursive "all" directory target.
@@ -233,6 +257,28 @@ robotika2/sensor_fusion/preinstall:
 robotika2/sensor_fusion/clean:
 
 .PHONY : robotika2/sensor_fusion/clean
+
+#=============================================================================
+# Directory level rules for directory robotika2/utils
+
+# Recursive "all" directory target.
+robotika2/utils/all:
+
+.PHONY : robotika2/utils/all
+
+# Recursive "preinstall" directory target.
+robotika2/utils/preinstall:
+
+.PHONY : robotika2/utils/preinstall
+
+# Recursive "clean" directory target.
+robotika2/utils/clean: robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+robotika2/utils/clean: robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+robotika2/utils/clean: robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+robotika2/utils/clean: robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+robotika2/utils/clean: robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+
+.PHONY : robotika2/utils/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/doxygen.dir
@@ -477,6 +523,141 @@ gtest: gtest/googletest/CMakeFiles/gtest.dir/rule
 gtest/googletest/CMakeFiles/gtest.dir/clean:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/clean
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/clean
+
+#=============================================================================
+# Target rules for target robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir/build.make robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir/build.make robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_py"
+.PHONY : robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/CMakeFiles 0
+.PHONY : robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_py: robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+.PHONY : std_msgs_generate_messages_py
+
+# clean rule for target.
+robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir/build.make robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+.PHONY : robotika2/utils/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+
+#=============================================================================
+# Target rules for target robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_nodejs"
+.PHONY : robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/CMakeFiles 0
+.PHONY : robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_nodejs: robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : std_msgs_generate_messages_nodejs
+
+# clean rule for target.
+robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+.PHONY : robotika2/utils/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_lisp"
+.PHONY : robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/CMakeFiles 0
+.PHONY : robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_lisp: robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : std_msgs_generate_messages_lisp
+
+# clean rule for target.
+robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+.PHONY : robotika2/utils/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+
+#=============================================================================
+# Target rules for target robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_eus"
+.PHONY : robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/CMakeFiles 0
+.PHONY : robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_eus: robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+
+.PHONY : std_msgs_generate_messages_eus
+
+# clean rule for target.
+robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+.PHONY : robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+
+#=============================================================================
+# Target rules for target robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_cpp"
+.PHONY : robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/CMakeFiles 0
+.PHONY : robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_cpp: robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : std_msgs_generate_messages_cpp
+
+# clean rule for target.
+robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+.PHONY : robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 
 #=============================================================================
 # Target rules for target robotika2/actuation/CMakeFiles/_catkin_empty_exported_target.dir
