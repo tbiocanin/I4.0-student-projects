@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/devel -DCMAKE_INSTALL_PREFIX=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/install -G Unix Makefiles
