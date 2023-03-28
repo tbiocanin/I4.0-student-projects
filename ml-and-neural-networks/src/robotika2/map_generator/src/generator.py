@@ -77,7 +77,7 @@ def image_generator(relevant_contour, no_imgs, no_objects):
             contour_to_be_used.append(random.choice(new_contour))
         cv2.drawContours(new_img, contour_to_be_used, -1, (0, 0, 0), 3)
         cv2.imwrite('new_imgs/map_' + str(i) + '.jpg', new_img)
-        rescaled_img = cv2.resize(new_img, (50, 50), interpolation = cv2.INTER_AREA)
+        rescaled_img = resize_image(new_img, (50, 50))
         cv2.imwrite('resized_imgs/map_resized_' + str(i) + '.jpg', rescaled_img)
     
     #check if imgs are listed in the given directory
