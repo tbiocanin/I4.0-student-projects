@@ -65,21 +65,20 @@ def image_rotation(contour):
     pass
 
 def image_generator(relevant_contour, no_imgs, no_objects):
-  
+    new_img = cv2.imread('blank.jpg')
     #getting all contours from the second item since the border needs to be a constant in all images 
     new_contour = relevant_contour[1:]
     contour_to_be_used = []
     contour_to_be_used.append(relevant_contour[0]) #uzmi okvir koji mora da bude konstanta u svakoj slici
-    print(contour_to_be_used)
     #fill in the choices of relevant conoturs to be used for the generated imgs
     #with the random selected contours, save new images in the folder new imgs
     for i in range(1, no_imgs):
         for _ in range(1, no_objects): #for every new image, take new random contours
             contour_to_be_used.append(random.choice(new_contour))
-        cv2.drawContours(image, contour_to_be_used, -1, (0, 255, 0), 3)
-        cv2.imwrite('new_imgs/map_' + str(i) + '.jpg', image)
-        resize_image(image, (1000, 1000))
-        cv2.imwrite('resized_imgs/map_resized_' + str(i) + '.jpg', image)
+        cv2.drawContours(new_img, contour_to_be_used, -1, (0, 0, 0), 3)
+        cv2.imwrite('new_imgs/map_' + str(i) + '.jpg', new_img)
+        resize_image(new_img, (1000, 1000))
+        cv2.imwrite('resized_imgs/map_resized_' + str(i) + '.jpg', new_img)
     
     #check if imgs are listed in the given directory
     if len(os.listdir('new_imgs/')) and len(os.listdir('resized_imgs/')) == 0:
