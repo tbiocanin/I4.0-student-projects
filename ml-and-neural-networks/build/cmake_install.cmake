@@ -138,6 +138,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/motion_model/cmake_install.cmake")
   include("/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/path_finding_pkg/cmake_install.cmake")
   include("/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/sensor_fusion/cmake_install.cmake")
+  include("/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/watchdog/cmake_install.cmake")
 
 endif()
 

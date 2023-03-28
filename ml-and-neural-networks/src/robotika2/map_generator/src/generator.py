@@ -1,4 +1,7 @@
-import cv2
+import cv2, os, pickle
+import random 
+from os.path import exists
+import numpy as np
 #TODO: make a shitload of combos of it and save them seperatly. They should be a 10x10 matrix with characteristic shapes representing 
 #different tools within the plant
 
@@ -18,9 +21,16 @@ def contour_detect(img):
     return contours
 
 def relevant_contour_detect(img):
-    
+
     contours = contour_detect(img)
     relevant_contours = []
+
+    if exists('relevan_contours.pkl'):
+        with open('relevan_contours.pkl', 'rb') as file:
+            relevant_contours = pickle.load(file)
+            return relevant_contours
+    else:
+        print("Relevant contours do not exits, need to generate new ones... \n")
 
     for i in range(0, len(contours)):
         cv2.drawContours(image, contours, i, (0, 255, 0), 3)
@@ -37,18 +47,49 @@ def relevant_contour_detect(img):
         else:
             continue
     cv2.destroyAllWindows()
+
+    with open('relevan_contours.pkl', 'wb') as file:
+        pickle.dump(relevant_contours, file) #save it for later use, so that the extraction does not need to run again
+
     return relevant_contours
 
-
 def resize_image(img, img_size):   
-    return cv2.resize(img, (img_size))
+    return cv2.resize(img, img_size, interpolation=cv2.INTER_AREA)
 
-def image_generator(relevant_contour, img):
-    # TODO: from relevant contours of an object, generate new images with different positions of the object
+def image_translation(contour):
+    # TODO: contour translation
     pass
 
+def image_rotation(contour):
+    #TODO: contour rotation
+    pass
+
+def image_generator(relevant_contour, no_imgs, no_objects):
+  
+    #getting all contours from the second item since the border needs to be a constant in all images 
+    new_contour = relevant_contour[1:]
+    contour_to_be_used = []
+    contour_to_be_used.append(relevant_contour[0]) #uzmi okvir koji mora da bude konstanta u svakoj slici
+    print(contour_to_be_used)
+    #fill in the choices of relevant conoturs to be used for the generated imgs
+    #with the random selected contours, save new images in the folder new imgs
+    for i in range(1, no_imgs):
+        for _ in range(1, no_objects): #for every new image, take new random contours
+            contour_to_be_used.append(random.choice(new_contour))
+        cv2.drawContours(image, contour_to_be_used, -1, (0, 255, 0), 3)
+        cv2.imwrite('new_imgs/map_' + str(i) + '.jpg', image)
+        resize_image(image, (1000, 1000))
+        cv2.imwrite('resized_imgs/map_resized_' + str(i) + '.jpg', image)
+    
+    #check if imgs are listed in the given directory
+    if len(os.listdir('new_imgs/')) and len(os.listdir('resized_imgs/')) == 0:
+        return False
+    else:
+        return True #ako se funkcija uspesno izvrsi do kraja i naprave se nove slike
 
 if __name__ == '__main__':
     image = cv2.imread('test.jpg')
     relevant_contour = relevant_contour_detect(image)
-    cv2.drawContours(image, relevant_contour, -1, (0, 255, 0), 3)
+
+    flag_when_created = image_generator(relevant_contour, 5, 5)
+    print(flag_when_created)

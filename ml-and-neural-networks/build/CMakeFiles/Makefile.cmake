@@ -21,6 +21,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "robotika2/sensor_fusion/catkin_generated/package.cmake"
   "robotika2/utils/catkin_generated/ordered_paths.cmake"
   "robotika2/utils/catkin_generated/package.cmake"
+  "robotika2/watchdog/catkin_generated/package.cmake"
   "/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/CMakeLists.txt"
   "/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/robotika2/actuation/CMakeLists.txt"
   "/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/robotika2/actuation/package.xml"
@@ -36,6 +37,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/robotika2/sensor_fusion/package.xml"
   "/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/robotika2/utils/CMakeLists.txt"
   "/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/robotika2/utils/package.xml"
+  "/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/robotika2/watchdog/CMakeLists.txt"
+  "/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/robotika2/watchdog/package.xml"
   "/opt/ros/noetic/share/catkin/cmake/all.cmake"
   "/opt/ros/noetic/share/catkin/cmake/assert.cmake"
   "/opt/ros/noetic/share/catkin/cmake/atomic_configure_file.cmake"
@@ -192,6 +195,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "robotika2/motion_model/CMakeFiles/CMakeDirectoryInformation.cmake"
   "robotika2/path_finding_pkg/CMakeFiles/CMakeDirectoryInformation.cmake"
   "robotika2/sensor_fusion/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "robotika2/watchdog/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:

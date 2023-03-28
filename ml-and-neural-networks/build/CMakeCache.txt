@@ -509,6 +509,12 @@ utils_BINARY_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neur
 //Value Computed by CMake
 utils_SOURCE_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/robotika2/utils
 
+//Value Computed by CMake
+watchdog_BINARY_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/watchdog
+
+//Value Computed by CMake
+watchdog_SOURCE_DIR:STATIC=/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/src/robotika2/watchdog
+
 
 ########################
 # INTERNAL cache entries
@@ -657,7 +663,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=11
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=12
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

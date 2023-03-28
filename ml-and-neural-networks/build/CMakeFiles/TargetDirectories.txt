@@ -90,3 +90,10 @@
 /home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/sensor_fusion/CMakeFiles/rebuild_cache.dir
 /home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/sensor_fusion/CMakeFiles/edit_cache.dir
 /home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/sensor_fusion/CMakeFiles/test.dir
+/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/watchdog/CMakeFiles/install/strip.dir
+/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/watchdog/CMakeFiles/install/local.dir
+/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/watchdog/CMakeFiles/install.dir
+/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/watchdog/CMakeFiles/list_install_components.dir
+/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/watchdog/CMakeFiles/rebuild_cache.dir
+/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/watchdog/CMakeFiles/edit_cache.dir
+/home/teodor/Documents/I4.0-student-projects/ml-and-neural-networks/build/robotika2/watchdog/CMakeFiles/test.dir

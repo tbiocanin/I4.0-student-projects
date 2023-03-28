@@ -61,6 +61,7 @@ all: robotika2/map_generator/all
 all: robotika2/motion_model/all
 all: robotika2/path_finding_pkg/all
 all: robotika2/sensor_fusion/all
+all: robotika2/watchdog/all
 
 .PHONY : all
 
@@ -73,6 +74,7 @@ preinstall: robotika2/map_generator/preinstall
 preinstall: robotika2/motion_model/preinstall
 preinstall: robotika2/path_finding_pkg/preinstall
 preinstall: robotika2/sensor_fusion/preinstall
+preinstall: robotika2/watchdog/preinstall
 
 .PHONY : preinstall
 
@@ -90,6 +92,7 @@ clean: robotika2/map_generator/clean
 clean: robotika2/motion_model/clean
 clean: robotika2/path_finding_pkg/clean
 clean: robotika2/sensor_fusion/clean
+clean: robotika2/watchdog/clean
 
 .PHONY : clean
 
@@ -279,6 +282,24 @@ robotika2/utils/clean: robotika2/utils/CMakeFiles/std_msgs_generate_messages_eus
 robotika2/utils/clean: robotika2/utils/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 
 .PHONY : robotika2/utils/clean
+
+#=============================================================================
+# Directory level rules for directory robotika2/watchdog
+
+# Recursive "all" directory target.
+robotika2/watchdog/all:
+
+.PHONY : robotika2/watchdog/all
+
+# Recursive "preinstall" directory target.
+robotika2/watchdog/preinstall:
+
+.PHONY : robotika2/watchdog/preinstall
+
+# Recursive "clean" directory target.
+robotika2/watchdog/clean:
+
+.PHONY : robotika2/watchdog/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/doxygen.dir
