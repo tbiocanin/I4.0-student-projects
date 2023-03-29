@@ -1,9 +1,7 @@
 import cv2, os, pickle
 import random 
 from os.path import exists
-import numpy as np
-#TODO: make a shitload of combos of it and save them seperatly. They should be a 10x10 matrix with characteristic shapes representing 
-#different tools within the plant
+from PIL import Image
 
 def contour_detect(img):
     cv2.waitKey(0)
@@ -77,14 +75,28 @@ def image_generator(relevant_contour, no_imgs, no_objects):
             contour_to_be_used.append(random.choice(new_contour))
         cv2.drawContours(new_img, contour_to_be_used, -1, (0, 0, 0), 3)
         cv2.imwrite('new_imgs/map_' + str(i) + '.jpg', new_img)
-        rescaled_img = resize_image(new_img, (50, 50))
-        cv2.imwrite('resized_imgs/map_resized_' + str(i) + '.jpg', rescaled_img)
+        rescaled_img = resize_image(new_img, (100, 100))
+        recovered_img = recover_object_info(rescaled_img)
+        cv2.imwrite('resized_imgs/map_resized_' + str(i) + '.jpg', recovered_img)
     
     #check if imgs are listed in the given directory
     if len(os.listdir('new_imgs/')) and len(os.listdir('resized_imgs/')) == 0:
         return False
     else:
         return True #ako se funkcija uspesno izvrsi do kraja i naprave se nove slike
+
+def recover_object_info(img):
+    
+    # width, height = img.size
+
+    for i in range(img.shape[0]):
+        for j in range(img.shape[1]):
+            if (img[i, j] != 255).all():
+                img[i, j] = 0
+            else:
+                continue
+    
+    return img
 
 if __name__ == '__main__':
     image = cv2.imread('test.jpg')
