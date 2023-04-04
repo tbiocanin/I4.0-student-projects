@@ -24,9 +24,9 @@ o=[o1; o2]';
 
 rng(0);
 
-% Define the structure of feedforward neural network
-net = newff(i,o,[25, 10],{'purelin', 'purelin'},'trainbr'); 
-%net je samo naziv mreze, tj promenljive
+% Define the structure of feedforward neural rotwork
+rot = newff(i,o,[25, 10],{'purelin', 'purelin'},'trainbr'); 
+%rot je samo naziv mreze, tj promenljive
 %newff = new feed forward [10 8] broj neurona u skrivenim slojevima
 %prvi sloj ima 10 neurona drugi ima 8 logsin su
 %aktivacione funkcije za slojeve, trainlm je algoritam ucenja (levenberg
@@ -34,21 +34,21 @@ net = newff(i,o,[25, 10],{'purelin', 'purelin'},'trainbr');
                                                         
 
 % Training parameters
-net.trainParam.show = 1000;
-% net.trainParam.lr = 0.5; % ne vazi za 'trainlm' learning rate
-net.trainParam.mu = 0.01; % parametar ucenja
-net.trainParam.epochs = 1000; %maksimalni br. operacija posle kog se zavrsava obucavanje
-net.trainParam.goal = 1e-5; %zadata greska, ako nama greska bude manja, obucavanje se zavrsava
+rot.trainParam.show = 1000;
+% rot.trainParam.lr = 0.5; % ne vazi za 'trainlm' learning rate
+rot.trainParam.mu = 0.01; % parametar ucenja
+rot.trainParam.epochs = 1000; %maksimalni br. operacija posle kog se zavrsava obucavanje
+rot.trainParam.goal = 1e-5; %zadata greska, ako nama greska bude manja, obucavanje se zavrsava
 
-net.divideParam.trainRatio =0.7; %koristimo 100% podataka za trening
-net.divideParam.valRatio = 0.2; %ovo je za validaciju
-net.divideParam.testRatio =0.1; %ovo je za trening
+rot.divideParam.trainRatio =0.7; %koristimo 100% podataka za trening
+rot.divideParam.valRatio = 0.2; %ovo je za validaciju
+rot.divideParam.testRatio =0.1; %ovo je za trening
 
 % Initialise training
-net = train(net,i,o);
+rot = train(rot,i,o);
 % View training results
-TRENING = sim(net,i(:,:));
-
+TRENING = sim(rot,i(:,:));
+save("ROTACIJA_MREZA.mat","rot");
 plot(i, o, 'or')
 hold on
 plot(i, TRENING, '*b')

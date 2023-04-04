@@ -9,13 +9,10 @@ function [korig_polozaj, korig_mat_kov] = kalman_korekcija(l, m, Q, prethodni_po
           0 1 l*cos(prethodni_polozaj(3,1))];
 
     S = H * prethodna_kovarijansa * H' + Q;
-
-    for i = 1:3
-
+    m = m';
+    for i = 1:5
             z(:, i) = m(:, i) - z_sensor;
             N(i,1) = z(:, i)' * inv(S) * z(:, i);
-
-
     end
 
     kar_obj = min(N);
